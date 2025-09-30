@@ -7,10 +7,6 @@
 [![GitHub repo size](https://img.shields.io/github/repo-size/dewanakl/undangan?color=brightgreen)](https://shields.io)
 [![GitHub License](https://img.shields.io/github/license/dewanakl/undangan?color=brightgreen)](https://shields.io)
 
-## 🚀 Demo
-Untuk kamu yang ingin melihat demo terlebih dahulu:
-
-[https://ulems.my.id/?to=Teman teman semua](https://ulems.my.id/?to=Teman%20teman%20semua)
 
 ## 📦 Documentation
 
