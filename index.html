@@ -60,6 +60,75 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" integrity="sha256-2FMn2Zx6PuH5tdBQDRNwrOo60ts5wWPC9R8jK67b3t4=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/css/all.min.css" integrity="sha256-9sWQSWbvKc7NvB2NhyQKwP1ZVTLbZHUUPg4iCSTGiNA=" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/guest.css">
+    <style>
+        body {
+            color: #212529; /* Bootstrap default text color */
+        }
+        h1, h2, h3, h4, h5, h6, .font-esthetic {
+            color: #212529; /* Bootstrap default heading color */
+        }
+        .font-arabic {
+            color: #ffd700; /* Gold for Arabic headings */
+        }
+        .bg-theme-auto, .border, .rounded-pill, .shadow, .rounded-4, .rounded-5 {
+            border-color: #d63384 !important;
+        }
+        .btn-outline-auto, .btn-primary, .btn-light {
+            background: linear-gradient(90deg, #d63384 0%, #b983ff 50%, #98ff98 100%);
+            color: #212529 !important;
+            border: none;
+        }
+        .btn-outline-auto:hover, .btn-primary:hover, .btn-light:hover {
+            background: linear-gradient(90deg, #b983ff 0%, #ffd700 100%);
+            color: #d63384 !important;
+        }
+        .border-secondary {
+            border-color: #b983ff !important;
+        }
+        .bg-overlay-auto {
+            background: rgba(255, 182, 193, 0.15); /* Light pink overlay */
+        }
+        .shadow {
+            box-shadow: 0 2px 8px 0 rgba(214, 51, 132, 0.15), 0 1.5px 4px 0 rgba(185, 131, 255, 0.10);
+        }
+        .rounded-pill, .rounded-4, .rounded-5 {
+            background: linear-gradient(90deg, #fff6f9 0%, #f3e8ff 100%);
+        }
+        /* Remove forced color for text elements to restore Bootstrap responsive defaults */
+        .btn, .btn-sm, .btn-primary, .btn-outline-auto {
+            font-weight: 600;
+        }
+        .carousel-indicators .active {
+            background-color: #d63384;
+        }
+        .carousel-indicators button {
+            background-color: #b983ff;
+        }
+        .border-light {
+            border-color: #ffd700 !important;
+        }
+        .bg-white-black {
+            background: linear-gradient(90deg, #fff6f9 0%, #f3e8ff 100%);
+        }
+        .bg-light-dark {
+            background: linear-gradient(90deg, #f3e8ff 0%, #fff6f9 100%);
+        }
+        .rounded-circle {
+            border-color: #98ff98 !important;
+        }
+        .progress-bar {
+            background-color: #d63384 !important;
+        }
+        .text-theme-auto {
+            color: #b983ff !important;
+        }
+        .text-secondary {
+            color: #ffd700 !important;
+        }
+        .text-theme-auto.bg-theme-auto {
+            background: #fff6f9 !important;
+        }
+    </style>
 
     <!-- Dependencies JS -->
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha256-5P1JGBOIxI7FBAvT/mb1fCnI5n/NhQKzNUuW7Hq0fMc=" crossorigin="anonymous"></script>
@@ -86,38 +155,13 @@
 
 <!-- <html lang="id" data-bs-theme="auto"> ['auto', 'dark', 'light'] -->
 
-<body data-audio="./assets/music/pure-love-304010.mp3" data-confetti="true" data-time="2024-01-01 09:30:00" style="background-color: #fff6f9;"></body>
+<body data-audio="./assets/music/pure-love-304010.mp3" data-confetti="true" data-time="2025-10-19 12:00:00" style="background-color: #fff6f9;"></body>
 
     <!-- Root Invitation -->
     <div class="row m-0 p-0 opacity-0" id="root">
 
-        <!-- Desktop mode -->
-        <div class="sticky-top vh-100 d-none d-sm-block col-sm-5 col-md-6 col-lg-7 col-xl-8 col-xxl-9 overflow-y-hidden m-0 p-0">
-            <div class="position-relative bg-white-black d-flex justify-content-center align-items-center vh-100" style="background-color: #fff6f9;">
-                <div class="d-flex position-absolute w-100 h-100">
-                    <div class="position-relative overflow-hidden vw-100">
-                        <div class="position-absolute h-100 w-100 slide-desktop" style="opacity: 0;">
-                            <img src="./assets/images/placeholder.webp" data-src="https://picsum.photos/1000/1000?random=7" alt="bg" class="bg-cover-home" style="mask-image: none; opacity: 30%;">
-                        </div>
-                        <div class="position-absolute h-100 w-100 slide-desktop" style="opacity: 0;">
-                            <img src="./assets/images/placeholder.webp" data-src="https://picsum.photos/1000/1000?random=8" alt="bg" class="bg-cover-home" style="mask-image: none; opacity: 30%;">
-                        </div>
-                        <div class="position-absolute h-100 w-100 slide-desktop" style="opacity: 0;">
-                            <img src="./assets/images/placeholder.webp" data-src="https://picsum.photos/1000/1000?random=9" alt="bg" class="bg-cover-home" style="mask-image: none; opacity: 30%;">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text-center p-4 bg-overlay-auto rounded-5">
-                    <h2 class="font-esthetic mb-4" style="font-size: 2rem;">Theresa Elizabeth Balamawu</h2>
-                    <p class="m-0" style="font-size: 1rem;">Minggu, 19 Oktober 2025</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Smartphone mode -->
-        <div class="col-sm-7 col-md-6 col-lg-5 col-xl-4 col-xxl-3 m-0 p-0">
-            <!-- Main Content -->
+        <!-- Unified layout for all devices -->
+        <div class="col-12 m-0 p-0">
             <main data-bs-spy="scroll" data-bs-target="#navbar-menu" data-bs-root-margin="25% 0% 0% 0%" data-bs-smooth-scroll="true" tabindex="0">
 
                 <!-- Home -->
@@ -133,7 +177,7 @@
                         <p class="my-2" style="font-size: 1.25rem;">19 Oktober 2025</p>
 
                         <button class="btn btn-outline-auto btn-sm shadow rounded-pill px-3 py-1" style="font-size: 0.825rem;">
-                            <i class="fa-solid fa-calendar-check me-2"></i>Save Google Calendar
+                            <i class="fa-solid fa-calendar-check me-2"></i><span style="color: #fff;">Save Google Calendar</span>
                         </button>
 
                         <div class="d-flex justify-content-center align-items-center mt-4 mb-2">
@@ -293,7 +337,23 @@
                 <!-- Wedding Date -->
                 <section class="bg-white-black pb-2" id="wedding-date" style="background-color: #fff6f9;">
                     <div class="container text-center">
-                        <h2 class="font-esthetic py-4 m-0" style="font-size: 2.25rem;">Acara Baptisan</h2>
+                        <h2 class="font-esthetic py-4 m-0" style="font-size: 2.25rem;">Moment Bahagia</h2>
+                        <div class="border rounded-pill shadow py-2 px-4 mt-2 mb-4">
+                            <div class="row justify-content-center">
+                                <div class="col-3 p-1">
+                                    <p class="d-inline m-0 p-0" style="font-size: 1.25rem;" id="day">0</p><small class="ms-1 me-0 my-0 p-0 d-inline">Hari</small>
+                                </div>
+                                <div class="col-3 p-1">
+                                    <p class="d-inline m-0 p-0" style="font-size: 1.25rem;" id="hour">0</p><small class="ms-1 me-0 my-0 p-0 d-inline">Jam</small>
+                                </div>
+                                <div class="col-3 p-1">
+                                    <p class="d-inline m-0 p-0" style="font-size: 1.25rem;" id="minute">0</p><small class="ms-1 me-0 my-0 p-0 d-inline">Menit</small>
+                                </div>
+                                <div class="col-3 p-1">
+                                    <p class="d-inline m-0 p-0" style="font-size: 1.25rem;" id="second">0</p><small class="ms-1 me-0 my-0 p-0 d-inline">Detik</small>
+                                </div>
+                            </div>
+                        </div>
 
                         <!-- Countdown display removed as requested -->
                         </div>
@@ -334,7 +394,7 @@
 
                         <div class="py-2" data-aos="fade-down" data-aos-duration="1500">
                             <div class="d-flex justify-content-center align-items-center mb-3">
-                                <div class="shadow rounded-circle border border-secondary" style="width: 3rem; height: 3rem; background-color: white;"></div>
+                                <div class="shadow rounded-circle border border-secondary" style="width: 3rem; height: 3rem; background-color: #fff6f9;"></div>
                                 <div class="shadow rounded-circle border border-secondary" style="width: 3rem; height: 3rem; background-color: aquamarine; margin-left: -1rem;"></div>
                                 <div class="shadow rounded-circle border border-secondary" style="width: 3rem; height: 3rem; background-color: limegreen; margin-left: -1rem;"></div>
                             </div>
@@ -350,70 +410,13 @@
 
                 <!-- Gallery -->
                 <section class="bg-white-black pb-5 pt-3" id="gallery" style="background-color: #fff6f9;">
-                    <div class="container">
+                    <div class="container text-center">
                         <div class="border rounded-5 shadow p-3">
-
-                            <h2 class="font-esthetic text-center py-2 m-0" style="font-size: 2.25rem;">Galeri</h2>
-
-                            <div id="carousel-image-one" data-aos="fade-up" data-aos-duration="1500" class="carousel slide mt-4" data-bs-ride="carousel">
-                                <div class="carousel-indicators">
-                                    <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                    <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                    <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                </div>
-
-                                <div class="carousel-inner rounded-4">
-                                    <div class="carousel-item active">
-                                        <img src="./assets/images/placeholder.webp" data-src="https://picsum.photos/1280/720?random=1" alt="image 1" class="d-block img-fluid cursor-pointer" onclick="undangan.guest.modal(this)">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="./assets/images/placeholder.webp" data-src="https://picsum.photos/1280/720?random=2" alt="image 2" class="d-block img-fluid cursor-pointer" onclick="undangan.guest.modal(this)">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="./assets/images/placeholder.webp" data-src="https://picsum.photos/1280/720?random=3" alt="image 3" class="d-block img-fluid cursor-pointer" onclick="undangan.guest.modal(this)">
-                                    </div>
-                                </div>
-
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-image-one" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-
-                                <button class="carousel-control-next" type="button" data-bs-target="#carousel-image-one" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
+                            <h2 class="font-esthetic py-2 m-0" style="font-size: 2.25rem;">Lokasi Acara</h2>
+                            <div class="mt-4 mb-3">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.726964893813!2d128.3223453147577!3d1.7288339980113426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwNDMnNDMuOCJOIDEyOMKwMTknMTIuOCJF!5e0!3m2!1sid!2sid!4v1718190000000!5m2!1sid!2sid" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
-
-                            <div id="carousel-image-two" data-aos="fade-up" data-aos-duration="1500" class="carousel slide mt-4" data-bs-ride="carousel">
-                                <div class="carousel-indicators">
-                                    <button type="button" data-bs-target="#carousel-image-two" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                    <button type="button" data-bs-target="#carousel-image-two" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                    <button type="button" data-bs-target="#carousel-image-two" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                </div>
-
-                                <div class="carousel-inner rounded-4">
-                                    <div class="carousel-item active">
-                                        <img src="./assets/images/placeholder.webp" data-src="https://picsum.photos/1280/720?random=4" alt="image 4" class="d-block img-fluid cursor-pointer" onclick="undangan.guest.modal(this)">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="./assets/images/placeholder.webp" data-src="https://picsum.photos/1280/720?random=5" alt="image 5" class="d-block img-fluid cursor-pointer" onclick="undangan.guest.modal(this)">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="./assets/images/placeholder.webp" data-src="https://picsum.photos/1280/720?random=6" alt="image 6" class="d-block img-fluid cursor-pointer" onclick="undangan.guest.modal(this)">
-                                    </div>
-                                </div>
-
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-image-two" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-
-                                <button class="carousel-control-next" type="button" data-bs-target="#carousel-image-two" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
-                            </div>
+                            <a href="https://maps.app.goo.gl/wzWuUH82jSUaXPwS8" target="_blank" class="btn btn-outline-auto btn-sm rounded-pill shadow mb-2 px-3"><i class="fa-solid fa-map-location-dot me-2"></i>Lihat Google Maps</a>
                         </div>
                     </div>
                 </section>
@@ -550,20 +553,12 @@
                     <div class="container text-center">
                         <p class="pb-2 pt-4" style="font-size: 0.95rem;">Terima kasih atas perhatian dan doa restu Anda, yang menjadi kebahagiaan serta kehormatan besar bagi kami.</p>
 
-                        <h2 class="font-esthetic" style="font-size: 2rem;">Wassalamualaikum Warahmatullahi Wabarakatuh</h2>
-                        <h2 class="font-arabic pt-4" style="font-size: 2rem;">اَلْحَمْدُ لِلّٰهِ رَبِّ الْعٰلَمِيْنَۙ</h2>
+                        <!-- Closing greetings removed as requested -->
 
                         <hr class="my-3">
 
                         <div class="row align-items-center justify-content-between flex-column pb-3">
-                            <div class="col-auto">
-                                <small>Build with<i class="fa-solid fa-heart mx-1"></i>Dewanakl</small>
-                            </div>
-                            <div class="col-auto">
-                                <small><i class="fa-brands fa-github me-1"></i><a target="_blank" href="https://github.com/dewanakl/undangan">github</a></small>
-                                <small><i class="fa-solid fa-chart-simple me-1"></i><a target="_blank" href="https://status.ulems.my.id">status</a></small>
-                                <small><i class="fa-solid fa-music me-1"></i><a target="_blank" href="https://pixabay.com/music/modern-classical-pure-love-304010">music</a></small>
-                            </div>
+                            <!-- Footer removed as requested -->
                         </div>
                     </div>
                 </section>
@@ -683,6 +678,29 @@
 </body>
 <script>
 // Countdown to Minggu, 19 Oktober 2025, 12:00 WIT (UTC+9)
+// Countdown to Minggu, 19 Oktober 2025, 12:00 WIT (UTC+9)
+function updateCountdown() {
+    // Target date: 2025-10-19 12:00 WIT (UTC+9)
+    const targetDate = new Date(Date.UTC(2025, 9, 19, 3, 0, 0)); // 12:00 WIT is UTC+9, so UTC is 03:00
+    const now = new Date();
+    const diff = targetDate - now;
+    let days = 0, hours = 0, minutes = 0, seconds = 0;
+    if (diff > 0) {
+        days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        minutes = Math.floor((diff / (1000 * 60)) % 60);
+        seconds = Math.floor((diff / 1000) % 60);
+    }
+    document.getElementById('day').textContent = days;
+    document.getElementById('hour').textContent = hours;
+    document.getElementById('minute').textContent = minutes;
+    document.getElementById('second').textContent = seconds;
+}
+
+if (document.getElementById('wedding-date')) {
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+}
 function updateCountdown() {
     const target = new Date(Date.UTC(2025, 9, 19, 3, 0, 0)); // 12:00 WIT = 03:00 UTC
     const now = new Date();
