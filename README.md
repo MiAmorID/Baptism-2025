@@ -48,7 +48,7 @@ I'm very open to those of you who want to contribute to the undangan!
 
 ## 🐞 Security Vulnerabilities
 
-If you find any security vulnerabilities in this undangan, please email DKL via [Appscenture@gmail.com](mailto:appscenture@gmail.com).
+If you find any security vulnerabilities in this undangan, please email DKL via [appscenture@gmail.com](mailto:appscenture@gmail.com).
 
 ## 📜 License
 
