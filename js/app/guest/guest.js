@@ -72,15 +72,29 @@ export const guest = (() => {
             name = window.decodeURIComponent(raw[1]);
         }
 
+
+
+        // Always show greeting on both locations
+        const guestGreeting = document.getElementById('guest-greeting');
+        if (guestGreeting) {
+            guestGreeting.textContent = guestGreeting.getAttribute('data-message');
+        }
+        const guestGreetingTop = document.getElementById('guest-greeting-top');
+        if (guestGreetingTop) {
+            guestGreetingTop.textContent = guestGreetingTop.getAttribute('data-message');
+        }
+
         if (name) {
+            // Welcome page: show name below greeting
             const guestName = document.getElementById('guest-name');
-            const div = document.createElement('div');
-            div.classList.add('m-2');
-
-            const template = `<small class="mt-0 mb-1 mx-0 p-0">${util.escapeHtml(guestName?.getAttribute('data-message'))}</small><p class="m-0 p-0" style="font-size: 1.25rem">${util.escapeHtml(name)}</p>`;
-            util.safeInnerHTML(div, template);
-
-            guestName?.appendChild(div);
+            if (guestName) {
+                guestName.textContent = name;
+            }
+            // Top of second page: show name below greeting
+            const guestNameTop = document.getElementById('guest-name-top');
+            if (guestNameTop) {
+                guestNameTop.textContent = name;
+            }
         }
 
         const form = document.getElementById('form-name');

@@ -169,6 +169,8 @@
                     <img src="./assets/images/placeholder.webp" data-src="./assets/images/bg.webp" alt="bg" class="position-absolute opacity-25 top-50 start-50 translate-middle bg-cover-home">
 
                     <div class="position-relative text-center bg-overlay-auto" style="background-color: unset;">
+                        <div id="guest-greeting-top" class="mb-1" style="font-size: 1.1rem;" data-message="Kepada Yth Bapak/Ibu/Saudara/i"></div>
+                        <div id="guest-name-top" class="fw-bold" style="font-size: 2rem;"></div>
                         <h1 class="font-esthetic pt-5 pb-4 fw-medium" style="font-size: 2.25rem;">Baptism</h1>
 
                         <img src="./assets/images/placeholder.webp" data-src="./assets/images/bg.webp" alt="bg" onclick="undangan.guest.modal(this)" class="img-center-crop rounded-circle border border-3 border-light shadow my-4 mx-auto cursor-pointer">
@@ -551,12 +553,13 @@
     <div class="loading-page bg-white-black" id="welcome" style="opacity: 0; background-color: #fff6f9;">
         <div class="d-flex justify-content-center align-items-center vh-100 overflow-y-auto">
             <div class="d-flex flex-column text-center">
-                 <h2 class="font-esthetic mb-4" style="font-size: 2.25rem;">Baptism</h2>
+                 <h2 class="font-esthetic mb-4" style="font-size: 2.25rem;">Acara Baptisan</h2>
 
                  <img src="./assets/images/placeholder.webp" data-src="./assets/images/bg.webp" alt="baptism" class="img-center-crop rounded-circle border border-3 border-light shadow mb-4 mx-auto">
 
-                 <h2 class="font-esthetic mb-4" style="font-size: 2.25rem;">Baptism</h2>
-                <div id="guest-name" data-message="Kepada Yth Bapak/Ibu/Saudara/i"></div>
+                 <h2 class="font-esthetic mb-4" style="font-size: 2.25rem;">Undangan</h2>
+                <div id="guest-greeting" class="mb-1" style="font-size: 1.1rem;" data-message="Kepada Yth Bapak/Ibu/Saudara/i"></div>
+                <div id="guest-name" class="fw-bold" style="font-size: 2rem;"></div>
                         <h2 class="font-esthetic my-4" style="font-size: 2.25rem;">Theresa Elizabeth Balamawu</h2>
                 <button type="button" class="btn btn-light shadow rounded-4 mt-3 mx-auto" onclick="undangan.guest.open(this)"><i class="fa-solid fa-envelope-open fa-bounce me-2"></i>Open Invitation</button>
             </div>
@@ -622,6 +625,31 @@
     </div>
 </body>
 <script>
+// Show guest name from URL parameter, always with greeting
+document.addEventListener('DOMContentLoaded', function() {
+    var params = new URLSearchParams(window.location.search);
+    var guestName = params.get('name');
+    // Welcome page
+    var guestNameDiv = document.getElementById('guest-name');
+    if (guestNameDiv) {
+        var greeting = guestNameDiv.dataset.message || '';
+        if (guestName) {
+            guestNameDiv.textContent = greeting + ' ' + decodeURIComponent(guestName);
+        } else {
+            guestNameDiv.textContent = greeting;
+        }
+    }
+    // Top of second page
+    var guestNameTop = document.getElementById('guest-name-top');
+    if (guestNameTop) {
+        var greetingTop = guestNameTop.dataset.message || '';
+        if (guestName) {
+            guestNameTop.textContent = greetingTop + ' ' + decodeURIComponent(guestName);
+        } else {
+            guestNameTop.textContent = greetingTop;
+        }
+    }
+});
 // Countdown to Minggu, 19 Oktober 2025, 12:00 WIT (UTC+9)
 // Countdown to Minggu, 19 Oktober 2025, 12:00 WIT (UTC+9)
 function updateCountdown() {
