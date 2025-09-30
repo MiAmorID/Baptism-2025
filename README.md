@@ -28,13 +28,6 @@
 > [!WARNING]  
 > Gunakan versi 3.14.0, untuk versi 4 masih tahap pengembangan dan berpotensi teredapat bug 🐛
 
-## 🔥 Deployment API
-
-- Video\
-    otw
-
-- Presentation
-    [https://docs.google.com/presentation](https://docs.google.com/presentation/d/1EY2YmWdZUI7ASoo0f2wvU7ec_Yt0uZanYa8YLbfNysk/edit)
 
 ## ⏰ Trial API
 Untuk kamu yang ingin mencoba secara gratis:
