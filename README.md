@@ -29,10 +29,6 @@
 > Gunakan versi 3.14.0, untuk versi 4 masih tahap pengembangan dan berpotensi teredapat bug 🐛
 
 
-## ⏰ Trial API
-Untuk kamu yang ingin mencoba secara gratis:
-
-[https://trial.ulems.my.id](https://trial.ulems.my.id)
 
 ## ⚙️ Tech stack
 
