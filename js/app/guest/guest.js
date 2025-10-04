@@ -339,10 +339,10 @@ export const guest = (() => {
         config = storage('config');
         information = storage('information');
 
-        const vid = video.init();
-        const img = image.init();
-        const aud = audio.init();
-        const lib = loaderLibs();
+    const vid = video.init();
+    const img = image.init();
+    const aud = audio.init();
+    const lib = loaderLibs();
         const token = document.body.getAttribute('data-key');
         const params = new URLSearchParams(window.location.search);
 

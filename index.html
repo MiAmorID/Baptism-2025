@@ -192,16 +192,82 @@
                     </div>
                 </section>
 
-                <!-- Wave Separator -->
+                                <!-- Utterances comment widget preview -->
+                                <div class="container text-center" style="margin-top: 48px;">
+                                    <script src="https://utteranc.es/client.js"
+                                        repo="MiAmorID/Baptism-2025"
+                                        issue-term="pathname"
+                                        theme="github-light"
+                                        crossorigin="anonymous"
+                                        async>
+                                    </script>
+                                </div>
 
-                <!-- Family -->
-                <section class="bg-white-black text-center" id="Acara" style="background-color: #fff6f9;">
-                    <h2 class="font-arabic py-4 m-0" style="font-size: 2rem; color: #212529;">Shalom</h2>
-                    <div class="py-4 m-0">
-                        <div style="font-size: 2rem; color: #212529;">Kami dari keluarga besar</div>
-                        <div class="font-esthetic" style="font-size: 2rem; color: #212529;">Balamawu - Tambariki</div>
-                    </div>
-                    <p class="pb-4 px-2 m-0" style="font-size: 0.95rem;">Tanpa mengurangi rasa hormat, kami mengundang Anda untuk berkenan menghadiri acara baptis anak :</p>
+                                <!-- Lazy loader for media: injects video/audio src when visible or on-demand -->
+                                <script>
+                                (function () {
+                                    // Inject video element when user clicks 'Lihat Story' or when near viewport
+                                    function createVideoEl(src, classes) {
+                                        const vid = document.createElement('video');
+                                        vid.setAttribute('playsinline', '');
+                                        vid.setAttribute('controls', '');
+                                        vid.setAttribute('preload', 'none');
+                                        vid.className = classes || '';
+                                        vid.style.maxHeight = '360px';
+                                        const source = document.createElement('source');
+                                        source.src = src;
+                                        source.type = 'video/mp4';
+                                        vid.appendChild(source);
+                                        return vid;
+                                    }
+
+                                    const container = document.getElementById('video-love-stroy');
+                                    const poster = document.getElementById('video-love-stroy-poster');
+                                    const loadingOverlay = document.getElementById('video-love-stroy-loading');
+
+                                    function loadVideo() {
+                                        if (!container || container.dataset.loaded) return;
+                                        const src = container.getAttribute('data-src');
+                                        if (!src) return;
+                                        loadingOverlay.style.display = '';
+                                        const vid = createVideoEl(src, container.getAttribute('data-vid-class'));
+                                        // when metadata loaded, hide overlay and poster
+                                        vid.addEventListener('loadedmetadata', function () {
+                                            loadingOverlay.style.display = 'none';
+                                            if (poster) poster.style.display = 'none';
+                                        });
+                                        container.appendChild(vid);
+                                        // mark as loaded to avoid duplicate
+                                        container.dataset.loaded = '1';
+                                    }
+
+                                    // Button handler used by existing button: undangan.guest.showStory passes parent node
+                                    window.lazyLoadStory = function () { loadVideo(); };
+
+                                    // Intersection observer to pre-load video a bit before it enters viewport
+                                    if ('IntersectionObserver' in window && container) {
+                                        const io = new IntersectionObserver((entries) => {
+                                            entries.forEach(e => {
+                                                if (e.isIntersecting) {
+                                                    loadVideo();
+                                                    io.unobserve(container);
+                                                }
+                                            });
+                                        }, {rootMargin: '200px 0px'});
+                                        io.observe(container);
+                                    }
+
+                                    // Make utteances async already set; ensure images lazy-load
+                                    document.querySelectorAll('img').forEach(img => {
+                                        if (!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
+                                    });
+
+                                    // Make audio elements non-preloading
+                                    document.querySelectorAll('audio').forEach(a => {
+                                        a.setAttribute('preload', 'none');
+                                    });
+                                })();
+                                </script>
 
                     <div class="overflow-x-hidden pb-4">
 
@@ -214,7 +280,7 @@
                             </div>
 
                             <div data-aos="fade-right" data-aos-duration="2000" class="pb-1">
-                                <img src="./assets/images/placeholder.webp" data-src="./assets/images/theresa.jpg" alt="theresa" onclick="undangan.guest.modal(this)" class="img-center-crop rounded-circle border border-3 border-light shadow my-4 mx-auto cursor-pointer">
+                                <img src="./assets/images/placeholder.webp" data-src="./assets/images/cowo.webp" alt="theresa" onclick="undangan.guest.modal(this)" class="img-center-crop rounded-circle border border-3 border-light shadow my-4 mx-auto cursor-pointer">
                                     <h2 class="font-esthetic m-0" style="font-size: 2.125rem;">Theresa Elizabeth Balamawu</h2>
                             </div>
 
@@ -282,7 +348,9 @@
                             <!-- If you don't want to use the video, remove the entire tag with id="video-love-story" below. -->
 
                             <div id="video-love-stroy" class="position-relative rounded-4 mb-2 pb-0" data-src="./assets/video/baptism.mp4" data-vid-class="w-100 rounded-4 shadow-sm m-0 p-0">
-                                <div class="position-absolute d-flex flex-column justify-content-center align-items-center top-50 start-50 translate-middle w-100 h-100 bg-overlay-auto rounded-4 z-3" id="video-love-stroy-loading">
+                                <!-- poster shown before video loads -->
+                                <img src="./assets/images/placeholder.webp" alt="video poster" class="w-100 rounded-4 shadow-sm" id="video-love-stroy-poster">
+                                <div class="position-absolute d-flex flex-column justify-content-center align-items-center top-50 start-50 translate-middle w-100 h-100 bg-overlay-auto rounded-4 z-3" id="video-love-stroy-loading" style="display:none;">
                                     <div class="progress w-25" role="progressbar" style="height: 0.5rem;" aria-label="progress bar">
                                         <div class="progress-bar" id="progress-bar-video-love-stroy" style="width: 0%;"></div>
                                     </div>
